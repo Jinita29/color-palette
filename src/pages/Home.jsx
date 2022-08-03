@@ -1,28 +1,55 @@
-import {useRef, useState} from "react";
-import CopyButton from "../components/common/shared/CopyButton";
+import { useState, useEffect } from "react";
 import CopyBox from "../components/common/shared/CopyBox";
-import ReactTooltip from "react-tooltip";
+import { SketchPicker, SliderPicker,SwatchesPicker } from 'react-color';
+
+var tinycolor = require("tinycolor2");
 
 const Home = () => {
-    const [copyData, setCopyData] = useState('');
-    const [isCopied, setIsCopied] = useState({
-        copyValue: false,
-        copyIndex: 5
-    });
+    const [isCopied, setIsCopied] = useState({ copyValue: false, copyIndex: 5 });
+    const [primaryColor, setPrimaryColor] = useState('#6bc808');
+    const [colorArray, setColorArray] = useState();
+
     const colorArr = ['#086ec8', '#6bc808', '#e500db', '#dc6505', '#d5000b'];
+
+
     const handleCopyBtn = (index, value) => {
-        const CopyDataValue = document.getElementById('Copy-Data');
-        setIsCopied({
-            copyValue: value,
-            copyIndex: index
-        });
-        setCopyData(CopyDataValue.value)
+        setIsCopied({ copyValue: value, copyIndex: index });
     }
-    const tooltipEl = useRef(null);
+
+    const handlePrimaryColorChange = (pColor: any) => {
+        setPrimaryColor(pColor.hex)
+        console.log("pColor",pColor)
+    }
+
+    useEffect(()=>{
+        var colors = tinycolor("#f00").analogous();
+        var color = tinycolor("red");
+        color.getFormat();
+        colors.map(function(t) { return console.log(t.toHexString()) });
+
+        console.log("coor", color)
+    },[primaryColor])
+
+
 
     return (
         <>
-            <h2 className={'dark:text-light'}>Pick your favourite color</h2>
+            <h2 className={'dark:text-light'}>Pick your favourite color {primaryColor} </h2>
+            <div className={'text-black'}>
+                <SketchPicker
+                    color={primaryColor}
+                    // onChangeComplete={()=>handlePrimaryColorChange}
+                    onChange={(e)=>handlePrimaryColorChange(e)}
+                />
+                Slider Picker
+                <SliderPicker
+                    color={primaryColor}
+                    onChange={(e)=>handlePrimaryColorChange(e)}
+                />
+
+                swatches
+                <SwatchesPicker color={primaryColor} onChange={(e)=>handlePrimaryColorChange(e)} />
+            </div>
             <div className={'flex -mx-4'}>
                 <div className={'grid grid-cols-2 px-4 -mx-4'}>
                     <div className={'grid grid-cols-1 px-4'}>
@@ -68,22 +95,6 @@ const Home = () => {
                         })}
                     </div>
                 </div>
-            </div>
-
-            <div className={'bg-light dark:bg-dark shadow p-4 rounded-xl w-1/2'}>
-                <div className={'flex justify-between items-center text-dark dark:text-light border-b border-[#f1f1f1] pb-3 mb-3'}>
-                    <h5>Copy Text</h5>
-                    <CopyButton copyText={copyData} copyBtn={(e) => handleCopyBtn(e)} />
-                </div>
-                <div>
-                    <textarea className={'w-full min-h-[200px] text-light dark:text-dark bg-dark dark:bg-light focus:outline-0'} id={'Copy-Data'} defaultValue={'<p>Hello</p>'} onChange={(event) => {
-                        setIsCopied(false);
-                        setCopyData(event.target.value)
-                    }}>
-
-                    </textarea>
-                </div>
-                <p>{isCopied ? 'Copied' : 'Copy'}</p>
             </div>
         </>
     )
