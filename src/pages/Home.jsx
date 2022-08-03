@@ -22,12 +22,43 @@ const Home = () => {
     }
 
     useEffect(()=>{
-        var colors = tinycolor("#f00").analogous();
+
+        //use isLight, isDark, isValid, getFormat, getOriginalInput
+
+        // Get different color code based on dark and light color using darken and lighten or both
+            var colors1 = tinycolor("red").darken(0).toString();
+        var colors2 = tinycolor("red").darken(10).toString();
+        var colors3 = tinycolor("red").darken(20).toString();
+        var colors4 = tinycolor("red").darken(30).toString();
+        var colors5 = tinycolor("red").darken(40).toString();
+        var colors6 = tinycolor("red").darken(50).toString();
+        var colors7 = tinycolor("red").darken(60).toString();
+        var colors8 = tinycolor("red").darken(70).toString();
+        var colors9 = tinycolor("red").darken(80).toString();
+        var colors10 = tinycolor("red").darken(90).toString();
+        var colors11= tinycolor("red").darken(100).toString();
         var color = tinycolor("red");
         color.getFormat();
-        colors.map(function(t) { return console.log(t.toHexString()) });
+        // colors.map(function(t) { return console.log(t.toHexString()) });
 
-        console.log("coor", color)
+        console.log("colors1", colors1)
+        console.log("colors2", colors2)
+        console.log("colors3", colors3)
+        console.log("colors4", colors4)
+        console.log("colors5", colors5)
+        console.log("colors6", colors6)
+        console.log("colors7", colors7)
+        console.log("colors8", colors8)
+        console.log("colors9", colors9)
+        console.log("colors10", colors10)
+        console.log("colors11", colors11)
+
+        var isLight = tinycolor("#fff");
+        isLight.isLight();
+
+        console.log("isLight", isLight.isLight())
+
+
     },[primaryColor])
 
 
