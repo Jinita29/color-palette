@@ -7,6 +7,8 @@
     <list default="true" id="c6346a40-a088-4aff-840c-f4cd803ce4e9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/shared/CopyBox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/shared/CopyBox.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +76,7 @@
       <workItem from="1659551341541" duration="3848000" />
       <workItem from="1659628718411" duration="9346000" />
       <workItem from="1659716186060" duration="1486000" />
-      <workItem from="1659790129990" duration="8377000" />
+      <workItem from="1659790129990" duration="20122000" />
     </task>
     <task id="LOCAL-00001" summary="Update tiny color">
       <created>1659553979986</created>
