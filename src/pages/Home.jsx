@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 import CopyBox from "../components/common/shared/CopyBox";
 import { SketchPicker, SliderPicker,SwatchesPicker } from 'react-color';
 
@@ -7,10 +7,12 @@ var tinycolor = require("tinycolor2");
 const Home = () => {
     const [isCopied, setIsCopied] = useState({ copyValue: false, copyIndex: 5 });
     const [primaryColor, setPrimaryColor] = useState('#6bc808');
-    const [colorArray, setColorArray] = useState();
+    const [tinyColor, setTinyColor] = useState([])
+    const [colorArr, setColorArr] = useState(['#6bc808', '#6bc800']);
+    const [tinyPrimdaryClr, setTinyPrimaryClr] = useState([]);
 
-    const colorArr = ['#086ec8', '#6bc808', '#e500db', '#dc6505', '#d5000b'];
-
+    const lightenValue = [0, 5, 10, 15, 20, 25, 30, 35, 40];
+    const darkenValue = [25, 30, 35, 40, 45];
 
     const handleCopyBtn = (index, value) => {
         setIsCopied({ copyValue: value, copyIndex: index });
@@ -21,111 +23,90 @@ const Home = () => {
         console.log("pColor",pColor)
     }
 
+    useLayoutEffect(()=>{
+        const colorGenerate = tinycolor(primaryColor);
+        setTinyPrimaryClr(colorGenerate)
+    },[primaryColor])
+
     useEffect(()=>{
+        // console.log("tinyPrimdaryClr", tinyPrimdaryClr?.isLight())
+        const lightenData = lightenValue?.map((value, index)=>{return tinycolor(primaryColor).lighten(value).toString()});
+        // const darkenData = lightenValue?.map((value, index)=>{return tinycolor(primaryColor).darken(value).toString()});
+        // const finalData = lightenData.concat(darkenData);
 
-        //use isLight, isDark, isValid, getFormat, getOriginalInput
+        const colors = tinycolor('#f00').splitcomplement();
+        const newColor = colors.map(function(t) { return t.toHexString(); });
+        console.log("tysatsta", newColor)
 
-        // Get different color code based on dark and light color using darken and lighten or both
-            var colors1 = tinycolor("red").darken(0).toString();
-        var colors2 = tinycolor("red").darken(10).toString();
-        var colors3 = tinycolor("red").darken(20).toString();
-        var colors4 = tinycolor("red").darken(30).toString();
-        var colors5 = tinycolor("red").darken(40).toString();
-        var colors6 = tinycolor("red").darken(50).toString();
-        var colors7 = tinycolor("red").darken(60).toString();
-        var colors8 = tinycolor("red").darken(70).toString();
-        var colors9 = tinycolor("red").darken(80).toString();
-        var colors10 = tinycolor("red").darken(90).toString();
-        var colors11= tinycolor("red").darken(100).toString();
-        var color = tinycolor("red");
-        color.getFormat();
-        // colors.map(function(t) { return console.log(t.toHexString()) });
-
-        console.log("colors1", colors1)
-        console.log("colors2", colors2)
-        console.log("colors3", colors3)
-        console.log("colors4", colors4)
-        console.log("colors5", colors5)
-        console.log("colors6", colors6)
-        console.log("colors7", colors7)
-        console.log("colors8", colors8)
-        console.log("colors9", colors9)
-        console.log("colors10", colors10)
-        console.log("colors11", colors11)
-
-        var isLight = tinycolor("#fff");
-        isLight.isLight();
-
-        console.log("isLight", isLight.isLight())
-
+        setColorArr(lightenData)
+        // console.log("tinyColor",lightenData)
 
     },[primaryColor])
 
-
+    const fetchData = () => {
+        // const newArr = [colors1, colors2, colors3, colors4, colors5, colors6, colors7, colors8, colors9, colors10, colors11]
+        // setColorArr(colorArr.concat(newArr))
+        // console.log("tinyColor",tinyColor)
+    }
 
     return (
         <>
+            <button onClick={() => fetchData()} className={'bg-white text-black py-3 px-5'} >Fetch</button>
             <h2 className={'dark:text-light'}>Pick your favourite color {primaryColor} </h2>
-            <div className={'text-black'}>
-                <SketchPicker
-                    color={primaryColor}
-                    // onChangeComplete={()=>handlePrimaryColorChange}
-                    onChange={(e)=>handlePrimaryColorChange(e)}
-                />
-                Slider Picker
-                <SliderPicker
-                    color={primaryColor}
-                    onChange={(e)=>handlePrimaryColorChange(e)}
-                />
-
-                swatches
-                <SwatchesPicker color={primaryColor} onChange={(e)=>handlePrimaryColorChange(e)} />
-            </div>
             <div className={'flex -mx-4'}>
                 <div className={'grid grid-cols-2 px-4 -mx-4'}>
+                    <SketchPicker
+                        color={primaryColor}
+                        onChangeComplete={()=>handlePrimaryColorChange}
+                        onChange={(e)=>handlePrimaryColorChange(e)}
+                    />
                     <div className={'grid grid-cols-1 px-4'}>
+                        {/*<p>{colorArr}</p>*/}
                         {colorArr?.map((color, index) => {
-                            return ( <div key={index} className={'relative w-full group cursor-pointer'}>
-                                <CopyBox pickColor={color} copyBtn={(index, value) => handleCopyBtn(index, value)} passIndex={index}/>
-                                {isCopied?.copyValue && isCopied?.copyIndex === index && <p className={'absolute inset-0 flex items-center justify-center bg-black text-white'} >Copied</p> }
-                            </div>)
+                            return (<div key={index} className={'relative w-full group cursor-pointer'}>
+                                    <CopyBox pickColor={color} copyBtn={(index, value) => handleCopyBtn(index, value)} passIndex={index}/>
+                                    {isCopied?.copyValue && isCopied?.copyIndex === index && <p className={'absolute inset-0 flex items-center justify-center bg-black text-white'} >Copied</p> }
+                                </div>)
+
                         })}
                     </div>
                     <div className={'grid grid-cols-1 px-4'}>
-                        {colorArr?.map((color, index) => {
-                            return ( <div key={index} className={'relative w-full group cursor-pointer'}>
-                                <CopyBox pickColor={color} copyBtn={(index, value) => handleCopyBtn(index, value)} passIndex={index}/>
-                                {isCopied?.copyValue && isCopied?.copyIndex === index && <p className={'absolute inset-0 flex items-center justify-center bg-black text-white'} >Copied</p> }
-                            </div>)
-                        })}
-                    </div>
-                </div>
-                <div className={'grid grid-cols-3 flex-auto px-4 -mx-4'}>
-                    <div className={'grid grid-cols-1 px-4'}>
-                        {colorArr?.map((color, index) => {
-                            return ( <div key={index} className={'relative w-full group cursor-pointer'}>
-                                <CopyBox pickColor={color} copyBtn={(index, value) => handleCopyBtn(index, value)} passIndex={index}/>
-                                {isCopied?.copyValue && isCopied?.copyIndex === index && <p className={'absolute inset-0 flex items-center justify-center bg-black text-white'} >Copied</p> }
-                            </div>)
-                        })}
-                    </div>
-                    <div className={'grid grid-cols-1 px-4'}>
-                        {colorArr?.map((color, index) => {
-                            return ( <div key={index} className={'relative w-full group cursor-pointer'}>
-                                <CopyBox pickColor={color} copyBtn={(index, value) => handleCopyBtn(index, value)} passIndex={index}/>
-                                {isCopied?.copyValue && isCopied?.copyIndex === index && <p className={'absolute inset-0 flex items-center justify-center bg-black text-white'} >Copied</p> }
-                            </div>)
-                        })}
-                    </div>
-                    <div className={'grid grid-cols-1 px-4'}>
-                        {colorArr?.map((color, index) => {
-                            return ( <div key={index} className={'relative w-full group cursor-pointer'}>
-                                <CopyBox pickColor={color} copyBtn={(index, value) => handleCopyBtn(index, value)} passIndex={index}/>
-                                {isCopied?.copyValue && isCopied?.copyIndex === index && <p className={'absolute inset-0 flex items-center justify-center bg-black text-white'} >Copied</p> }
-                            </div>)
-                        })}
+                        {/*{colorArr?.map((color, index) => {*/}
+                        {/*    return (*/}
+                        {/*        <div key={index} className={'relative w-full group cursor-pointer'}>*/}
+                        {/*        <CopyBox pickColor={color} copyBtn={(index, value) => handleCopyBtn(index, value)} passIndex={index}/>*/}
+                        {/*        {isCopied?.copyValue && isCopied?.copyIndex === index && <p className={'absolute inset-0 flex items-center justify-center bg-black text-white'} >Copied</p> }*/}
+                        {/*    </div>*/}
+                        {/*    )*/}
+                        {/*})}*/}
                     </div>
                 </div>
+                {/*<div className={'grid grid-cols-3 flex-auto px-4 -mx-4'}>*/}
+                {/*    <div className={'grid grid-cols-1 px-4'}>*/}
+                {/*        {colorArr?.map((color, index) => {*/}
+                {/*            return ( <div key={index} className={'relative w-full group cursor-pointer'}>*/}
+                {/*                <CopyBox pickColor={color} copyBtn={(index, value) => handleCopyBtn(index, value)} passIndex={index}/>*/}
+                {/*                {isCopied?.copyValue && isCopied?.copyIndex === index && <p className={'absolute inset-0 flex items-center justify-center bg-black text-white'} >Copied</p> }*/}
+                {/*            </div>)*/}
+                {/*        })}*/}
+                {/*    </div>*/}
+                {/*    <div className={'grid grid-cols-1 px-4'}>*/}
+                {/*        {colorArr?.map((color, index) => {*/}
+                {/*            return ( <div key={index} className={'relative w-full group cursor-pointer'}>*/}
+                {/*                <CopyBox pickColor={color} copyBtn={(index, value) => handleCopyBtn(index, value)} passIndex={index}/>*/}
+                {/*                {isCopied?.copyValue && isCopied?.copyIndex === index && <p className={'absolute inset-0 flex items-center justify-center bg-black text-white'} >Copied</p> }*/}
+                {/*            </div>)*/}
+                {/*        })}*/}
+                {/*    </div>*/}
+                {/*    <div className={'grid grid-cols-1 px-4'}>*/}
+                {/*        {colorArr?.map((color, index) => {*/}
+                {/*            return ( <div key={index} className={'relative w-full group cursor-pointer'}>*/}
+                {/*                <CopyBox pickColor={color} copyBtn={(index, value) => handleCopyBtn(index, value)} passIndex={index}/>*/}
+                {/*                {isCopied?.copyValue && isCopied?.copyIndex === index && <p className={'absolute inset-0 flex items-center justify-center bg-black text-white'} >Copied</p> }*/}
+                {/*            </div>)*/}
+                {/*        })}*/}
+                {/*    </div>*/}
+                {/*</div>*/}
             </div>
         </>
     )

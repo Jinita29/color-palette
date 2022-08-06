@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c6346a40-a088-4aff-840c-f4cd803ce4e9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/common/shared/CopyBox.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/shared/CopyButton.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Footer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/SideBar.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/PublicLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/PublicLayout.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +19,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="65b3e6a9-787f-4812-9b09-1d1e8728b627" />
+        <option name="url" value="https://github.com/Jinita29/color-palette.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -67,7 +68,29 @@
       <workItem from="1659110684025" duration="2651000" />
       <workItem from="1659188617990" duration="140000" />
       <workItem from="1659188800428" duration="8107000" />
+      <workItem from="1659284530281" duration="1827000" />
+      <workItem from="1659542307791" duration="403000" />
+      <workItem from="1659542969679" duration="17000" />
+      <workItem from="1659551341541" duration="3848000" />
+      <workItem from="1659628718411" duration="9346000" />
+      <workItem from="1659716186060" duration="1486000" />
+      <workItem from="1659790129990" duration="8377000" />
     </task>
+    <task id="LOCAL-00001" summary="Update tiny color">
+      <created>1659553979986</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1659553979986</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Update tiny color with comments">
+      <created>1659555588795</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1659555588795</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -83,5 +106,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update tiny color" />
+    <MESSAGE value="Update tiny color with comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update tiny color with comments" />
   </component>
 </project>
