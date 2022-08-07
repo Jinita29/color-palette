@@ -6,9 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="c6346a40-a088-4aff-840c-f4cd803ce4e9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Footer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Header.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/shared/CopyBox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/shared/CopyBox.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/PublicLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/PublicLayout.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/Images.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/Images.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +88,7 @@
       <workItem from="1659790129990" duration="20508000" />
       <workItem from="1659856590221" duration="6455000" />
       <workItem from="1659872115135" duration="577000" />
-      <workItem from="1659879535352" duration="3615000" />
+      <workItem from="1659879535352" duration="9453000" />
     </task>
     <task id="LOCAL-00001" summary="Update tiny color">
       <created>1659553979986</created>

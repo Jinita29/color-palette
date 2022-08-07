@@ -13,7 +13,7 @@ const Home = () => {
     const darkenValue = [8, 20, 25, 30];
 
     const [colorArr, setColorArr] = useState({
-        primary: ['#3366FF'],
+        primary: [],
         secondary: ['#97255e'],
         success: ['#5c9a00'],
         info: ['#348097'],
@@ -30,7 +30,7 @@ const Home = () => {
     })
 
     const handleCopyBtn = (index, value) => {
-        setIsCopied({ copyValue: value, copyIndex: index });
+        // setIsCopied({ copyValue: value, copyIndex: index });
     }
 
     useEffect(()=>{
@@ -61,8 +61,8 @@ const Home = () => {
     return (
         <>
             <div className={'flex -mx-4'}>
-                <div className={'grid grid-cols-2 gap-x-3 px-4'}>
-                    <div className={'grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>
+                <div className={'w-[30%] flex gap-x-3 px-4 border-r-2 py-3 border-[#cccccc80]'}>
+                    <div className={'w-1/2 grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>
                         <h6 className={'capitalize font-bold text-sm opacity-60'}>primary</h6>
                         <Tippy
                             content={
@@ -76,11 +76,11 @@ const Home = () => {
                             interactive={true}
                             placement="left-start"
                         >
-                            <button className={'flex items-center bg-white p-2 min-w-[200px] rounded-md mb-6 mt-3 focus:shadow-[0_0_0px_3px_#ccc]'}>
-                                <div className={'flex items-center pr-2 border-r border-[#969696]'} >
-                                    <button style={{backgroundColor: chooseColor?.primary}} className={`w-8 h-8`}></button>
+                            <button className={'flex items-center bg-[#dadada] dark:bg-dark p-2 rounded-md mb-6 mt-3'}>
+                                <div className={'flex items-center pr-2 border-r-2 border-[#ccc]'} >
+                                    <button style={{backgroundColor: chooseColor?.primary}} className={`w-8 h-8 rounded-md`}></button>
                                 </div>
-                                <p className={'ml-2 text-sm leading-[29px] text-black bg-opacity-20 px-2'}>{chooseColor?.primary}</p>
+                                <p className={'ml-2 text-sm leading-[29px] text-black dark:text-light font-[600] bg-opacity-20 text-base pr-3'}>{chooseColor?.primary}</p>
                             </button>
                         </Tippy>
                         <div className={'grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>
@@ -92,7 +92,7 @@ const Home = () => {
                             })}
                         </div>
                     </div>
-                    <div className={'grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>
+                    <div className={'w-1/2 grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>
                         <h6 className={'capitalize font-bold text-sm opacity-60'}>secondary</h6>
                         <Tippy
                             content={
@@ -106,11 +106,11 @@ const Home = () => {
                             interactive={true}
                             placement="left-start"
                         >
-                            <button className={'flex items-center bg-white p-2 min-w-[200px] rounded-md mb-6 mt-3 focus:shadow-[0_0_0px_3px_#ccc]'}>
-                                <div className={'flex items-center pr-2 border-r border-[#969696]'} >
-                                    <button style={{backgroundColor: chooseColor?.secondary}} className={`w-8 h-8`}></button>
+                            <button className={'flex items-center bg-[#dadada] dark:bg-dark p-2 rounded-md mb-6 mt-3'}>
+                                <div className={'flex items-center pr-2 border-r-2 border-[#ccc]'} >
+                                    <button style={{backgroundColor: chooseColor?.secondary}} className={`w-8 h-8 rounded-md`}></button>
                                 </div>
-                                <p className={'ml-2 text-sm leading-[29px] text-black bg-opacity-20 px-2'}>{chooseColor?.secondary}</p>
+                                <p className={'ml-2 text-sm leading-[29px] text-black dark:text-light font-[600] bg-opacity-20 text-base pr-3'}>{chooseColor?.secondary}</p>
                             </button>
                         </Tippy>
                         <div className={'grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>
@@ -124,7 +124,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div className={'grid grid-cols-4 flex-auto gap-x-3 px-4'}>
+                <div className={'w-[70%] grid grid-cols-4 flex-auto gap-x-3 py-3 px-4'}>
                     <div className={'grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>
                         <h6 className={'capitalize font-bold text-sm opacity-60'}>success</h6>
                         <Tippy
@@ -139,11 +139,11 @@ const Home = () => {
                             interactive={true}
                             placement="left-start"
                         >
-                            <button className={'flex items-center bg-white p-2 min-w-[200px] rounded-md mb-6 mt-3 focus:shadow-[0_0_0px_3px_#ccc]'}>
-                                <div className={'flex items-center pr-2 border-r border-[#969696]'} >
-                                    <button style={{backgroundColor: chooseColor?.success}} className={`w-8 h-8`}></button>
+                            <button className={'flex items-center bg-[#dadada] dark:bg-dark p-2 rounded-md mb-6 mt-3'}>
+                                <div className={'flex items-center pr-2 border-r-2 border-[#ccc]'} >
+                                    <button style={{backgroundColor: chooseColor?.success}} className={`w-8 h-8 rounded-md`}></button>
                                 </div>
-                                <p className={'ml-2 text-sm leading-[29px] text-black bg-opacity-20 px-2'}>{chooseColor?.success}</p>
+                                <p className={'ml-2 text-sm leading-[29px] text-black dark:text-light font-[600] bg-opacity-20 text-base pr-3'}>{chooseColor?.success}</p>
                             </button>
                         </Tippy>
                         <div className={'grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>
@@ -170,11 +170,11 @@ const Home = () => {
                             interactive={true}
                             placement="left-start"
                         >
-                            <button className={'flex items-center bg-white p-2 min-w-[200px] rounded-md mb-6 mt-3 focus:shadow-[0_0_0px_3px_#ccc]'}>
-                                <div className={'flex items-center pr-2 border-r border-[#969696]'} >
-                                    <button style={{backgroundColor: chooseColor?.info}} className={`w-8 h-8`}></button>
+                            <button className={'flex items-center bg-[#dadada] dark:bg-dark p-2 rounded-md mb-6 mt-3'}>
+                                <div className={'flex items-center pr-2 border-r-2 border-[#ccc]'} >
+                                    <button style={{backgroundColor: chooseColor?.info}} className={`w-8 h-8 rounded-md`}></button>
                                 </div>
-                                <p className={'ml-2 text-sm leading-[29px] text-black bg-opacity-20 px-2'}>{chooseColor?.info}</p>
+                                <p className={'ml-2 text-sm leading-[29px] text-black dark:text-light font-[600] bg-opacity-20 text-base pr-3'}>{chooseColor?.info}</p>
                             </button>
                         </Tippy>
                         <div className={'grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>
@@ -201,11 +201,11 @@ const Home = () => {
                             interactive={true}
                             placement="left-start"
                         >
-                            <button className={'flex items-center bg-white p-2 min-w-[200px] rounded-md mb-6 mt-3 focus:shadow-[0_0_0px_3px_#ccc]'}>
-                                <div className={'flex items-center pr-2 border-r border-[#969696]'} >
-                                    <button style={{backgroundColor: chooseColor?.warning}} className={`w-8 h-8`}></button>
+                            <button className={'flex items-center bg-[#dadada] dark:bg-dark p-2 rounded-md mb-6 mt-3'}>
+                                <div className={'flex items-center pr-2 border-r-2 border-[#ccc]'} >
+                                    <button style={{backgroundColor: chooseColor?.warning}} className={`w-8 h-8 rounded-md`}></button>
                                 </div>
-                                <p className={'ml-2 text-sm leading-[29px] text-black bg-opacity-20 px-2'}>{chooseColor?.warning}</p>
+                                <p className={'ml-2 text-sm leading-[29px] text-black dark:text-light font-[600] bg-opacity-20 text-base pr-3'}>{chooseColor?.warning}</p>
                             </button>
                         </Tippy>
                         <div className={'grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>
@@ -232,11 +232,11 @@ const Home = () => {
                             interactive={true}
                             placement="left-start"
                         >
-                            <button className={'flex items-center bg-white p-2 min-w-[200px] rounded-md mb-6 mt-3 focus:shadow-[0_0_0px_3px_#ccc]'}>
-                                <div className={'flex items-center pr-2 border-r border-[#969696]'} >
-                                    <button style={{backgroundColor: chooseColor?.danger}} className={`w-8 h-8`}></button>
+                            <button className={'flex items-center bg-[#dadada] dark:bg-dark p-2 rounded-md mb-6 mt-3'}>
+                                <div className={'flex items-center pr-2 border-r-2 border-[#ccc]'} >
+                                    <button style={{backgroundColor: chooseColor?.danger}} className={`w-8 h-8 rounded-md`}></button>
                                 </div>
-                                <p className={'ml-2 text-sm leading-[29px] text-black bg-opacity-20 px-2'}>{chooseColor?.danger}</p>
+                                <p className={'ml-2 text-sm leading-[29px] text-black dark:text-light font-[600] bg-opacity-20 text-base pr-3'}>{chooseColor?.danger}</p>
                             </button>
                         </Tippy>
                         <div className={'grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>

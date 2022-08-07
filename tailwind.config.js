@@ -57,27 +57,27 @@ module.exports = {
       });
       addComponents({
         '.container': {
-          maxWidth: '100%',
+          maxWidth: '1300px',
           '@screen xs': {
-            maxWidth: '95%'
+            maxWidth: '1300px'
           },
           '@screen sm': {
-            maxWidth: '95%'
+            maxWidth: '1300px'
           },
           '@screen md': {
-            maxWidth: '90%'
+            maxWidth: '1300px'
           },
           '@screen lg': {
-            maxWidth: '90%'
+            maxWidth: '1300px'
           },
           '@screen xl': {
-            maxWidth: '90%'
+            maxWidth: '1300px'
           },
           '@screen xxl': {
-            maxWidth: '90%'
+            maxWidth: '1300px'
           },
           '@screen 3xl': {
-            maxWidth: '80%'
+            maxWidth: '1300px'
           },
 
         },
