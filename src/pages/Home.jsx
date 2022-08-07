@@ -78,7 +78,7 @@ const Home = () => {
                         >
                             <button className={'flex items-center bg-[#dadada] dark:bg-dark p-2 rounded-md mb-6 mt-3'}>
                                 <div className={'flex items-center pr-2 border-r-2 border-[#ccc]'} >
-                                    <button style={{backgroundColor: chooseColor?.primary}} className={`w-8 h-8 rounded-md`}></button>
+                                    <div style={{backgroundColor: chooseColor?.primary}} className={`w-8 h-8 rounded-md`}></div>
                                 </div>
                                 <p className={'ml-2 text-sm leading-[29px] text-black dark:text-light font-[600] bg-opacity-20 text-base pr-3'}>{chooseColor?.primary}</p>
                             </button>
@@ -108,7 +108,7 @@ const Home = () => {
                         >
                             <button className={'flex items-center bg-[#dadada] dark:bg-dark p-2 rounded-md mb-6 mt-3'}>
                                 <div className={'flex items-center pr-2 border-r-2 border-[#ccc]'} >
-                                    <button style={{backgroundColor: chooseColor?.secondary}} className={`w-8 h-8 rounded-md`}></button>
+                                    <div style={{backgroundColor: chooseColor?.secondary}} className={`w-8 h-8 rounded-md`}></div>
                                 </div>
                                 <p className={'ml-2 text-sm leading-[29px] text-black dark:text-light font-[600] bg-opacity-20 text-base pr-3'}>{chooseColor?.secondary}</p>
                             </button>
@@ -141,7 +141,7 @@ const Home = () => {
                         >
                             <button className={'flex items-center bg-[#dadada] dark:bg-dark p-2 rounded-md mb-6 mt-3'}>
                                 <div className={'flex items-center pr-2 border-r-2 border-[#ccc]'} >
-                                    <button style={{backgroundColor: chooseColor?.success}} className={`w-8 h-8 rounded-md`}></button>
+                                    <div style={{backgroundColor: chooseColor?.success}} className={`w-8 h-8 rounded-md`}></div>
                                 </div>
                                 <p className={'ml-2 text-sm leading-[29px] text-black dark:text-light font-[600] bg-opacity-20 text-base pr-3'}>{chooseColor?.success}</p>
                             </button>
@@ -172,7 +172,7 @@ const Home = () => {
                         >
                             <button className={'flex items-center bg-[#dadada] dark:bg-dark p-2 rounded-md mb-6 mt-3'}>
                                 <div className={'flex items-center pr-2 border-r-2 border-[#ccc]'} >
-                                    <button style={{backgroundColor: chooseColor?.info}} className={`w-8 h-8 rounded-md`}></button>
+                                    <div style={{backgroundColor: chooseColor?.info}} className={`w-8 h-8 rounded-md`}></div>
                                 </div>
                                 <p className={'ml-2 text-sm leading-[29px] text-black dark:text-light font-[600] bg-opacity-20 text-base pr-3'}>{chooseColor?.info}</p>
                             </button>
@@ -203,7 +203,7 @@ const Home = () => {
                         >
                             <button className={'flex items-center bg-[#dadada] dark:bg-dark p-2 rounded-md mb-6 mt-3'}>
                                 <div className={'flex items-center pr-2 border-r-2 border-[#ccc]'} >
-                                    <button style={{backgroundColor: chooseColor?.warning}} className={`w-8 h-8 rounded-md`}></button>
+                                    <div style={{backgroundColor: chooseColor?.warning}} className={`w-8 h-8 rounded-md`}></div>
                                 </div>
                                 <p className={'ml-2 text-sm leading-[29px] text-black dark:text-light font-[600] bg-opacity-20 text-base pr-3'}>{chooseColor?.warning}</p>
                             </button>
@@ -234,7 +234,7 @@ const Home = () => {
                         >
                             <button className={'flex items-center bg-[#dadada] dark:bg-dark p-2 rounded-md mb-6 mt-3'}>
                                 <div className={'flex items-center pr-2 border-r-2 border-[#ccc]'} >
-                                    <button style={{backgroundColor: chooseColor?.danger}} className={`w-8 h-8 rounded-md`}></button>
+                                    <div style={{backgroundColor: chooseColor?.danger}} className={`w-8 h-8 rounded-md`}></div>
                                 </div>
                                 <p className={'ml-2 text-sm leading-[29px] text-black dark:text-light font-[600] bg-opacity-20 text-base pr-3'}>{chooseColor?.danger}</p>
                             </button>
