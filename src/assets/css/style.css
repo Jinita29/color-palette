@@ -21,4 +21,7 @@
     .grid .tippy-box .tippy-content{
         @apply p-1;
     }
+    input:focus-visible{
+        @apply outline-0;
+    }
 }

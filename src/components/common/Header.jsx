@@ -19,7 +19,7 @@ const Header = () => {
     },[darkMode])
     return (
         <>
-           <header className={'bg-light dark:bg-dark py-3 shadow fixed left-0 right-0 top-0 w-full z-[999]'}>
+           <header className={'bg-light dark:bg-dark py-3 shadow fixed left-0 right-0 top-0 w-full z-[99999]'}>
                <div className={'container'}>
                    <div className={'flex justify-between items-center'}>
                        <Link  to={ROUTE_USER?.HOME} ><img src={Images?.Logo} alt="Logo" width={30} height={30} /></Link>

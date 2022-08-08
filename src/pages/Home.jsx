@@ -80,7 +80,12 @@ const Home = () => {
                                 <div className={'flex items-center pr-2 border-r-2 border-[#ccc]'} >
                                     <div style={{backgroundColor: chooseColor?.primary}} className={`w-8 h-8 rounded-md`}></div>
                                 </div>
-                                <p className={'ml-2 text-sm leading-[29px] text-black dark:text-light font-[600] bg-opacity-20 text-base pr-3'}>{chooseColor?.primary}</p>
+                                <input
+                                    type={'text'}
+                                    defaultValue={chooseColor?.primary}
+                                    onChange={(e)=>setChooseColor({...chooseColor, primary: e.target.value})}
+                                    className={'bg-transparent w-full uppercase focus-visible:outlilne-0 ml-2 text-sm leading-[29px] text-black dark:text-light font-[600] bg-opacity-20 text-base pr-3'}
+                                />
                             </button>
                         </Tippy>
                         <div className={'grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>
@@ -110,7 +115,12 @@ const Home = () => {
                                 <div className={'flex items-center pr-2 border-r-2 border-[#ccc]'} >
                                     <div style={{backgroundColor: chooseColor?.secondary}} className={`w-8 h-8 rounded-md`}></div>
                                 </div>
-                                <p className={'ml-2 text-sm leading-[29px] text-black dark:text-light font-[600] bg-opacity-20 text-base pr-3'}>{chooseColor?.secondary}</p>
+                                <input
+                                    type={'text'}
+                                    defaultValue={chooseColor?.secondary}
+                                    onChange={(e)=>setChooseColor({...chooseColor, secondary: e.target.value})}
+                                    className={'bg-transparent w-full uppercase focus-visible:outlilne-0 ml-2 text-sm leading-[29px] text-black dark:text-light font-[600] bg-opacity-20 text-base pr-3'}
+                                />
                             </button>
                         </Tippy>
                         <div className={'grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>
@@ -143,7 +153,12 @@ const Home = () => {
                                 <div className={'flex items-center pr-2 border-r-2 border-[#ccc]'} >
                                     <div style={{backgroundColor: chooseColor?.success}} className={`w-8 h-8 rounded-md`}></div>
                                 </div>
-                                <p className={'ml-2 text-sm leading-[29px] text-black dark:text-light font-[600] bg-opacity-20 text-base pr-3'}>{chooseColor?.success}</p>
+                                <input
+                                    type={'text'}
+                                    defaultValue={chooseColor?.success}
+                                    onChange={(e)=>setChooseColor({...chooseColor, success: e.target.value})}
+                                    className={'bg-transparent w-full uppercase focus-visible:outlilne-0 ml-2 text-sm leading-[29px] text-black dark:text-light font-[600] bg-opacity-20 text-base pr-3'}
+                                />
                             </button>
                         </Tippy>
                         <div className={'grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>
@@ -174,7 +189,12 @@ const Home = () => {
                                 <div className={'flex items-center pr-2 border-r-2 border-[#ccc]'} >
                                     <div style={{backgroundColor: chooseColor?.info}} className={`w-8 h-8 rounded-md`}></div>
                                 </div>
-                                <p className={'ml-2 text-sm leading-[29px] text-black dark:text-light font-[600] bg-opacity-20 text-base pr-3'}>{chooseColor?.info}</p>
+                                <input
+                                    type={'text'}
+                                    defaultValue={chooseColor?.info}
+                                    onChange={(e)=>setChooseColor({...chooseColor, info: e.target.value})}
+                                    className={'bg-transparent w-full uppercase focus-visible:outlilne-0 ml-2 text-sm leading-[29px] text-black dark:text-light font-[600] bg-opacity-20 text-base pr-3'}
+                                />
                             </button>
                         </Tippy>
                         <div className={'grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>
@@ -205,7 +225,12 @@ const Home = () => {
                                 <div className={'flex items-center pr-2 border-r-2 border-[#ccc]'} >
                                     <div style={{backgroundColor: chooseColor?.warning}} className={`w-8 h-8 rounded-md`}></div>
                                 </div>
-                                <p className={'ml-2 text-sm leading-[29px] text-black dark:text-light font-[600] bg-opacity-20 text-base pr-3'}>{chooseColor?.warning}</p>
+                                <input
+                                    type={'text'}
+                                    defaultValue={chooseColor?.warning}
+                                    onChange={(e)=>setChooseColor({...chooseColor, warning: e.target.value})}
+                                    className={'bg-transparent w-full uppercase focus-visible:outlilne-0 ml-2 text-sm leading-[29px] text-black dark:text-light font-[600] bg-opacity-20 text-base pr-3'}
+                                />
                             </button>
                         </Tippy>
                         <div className={'grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>
@@ -236,7 +261,12 @@ const Home = () => {
                                 <div className={'flex items-center pr-2 border-r-2 border-[#ccc]'} >
                                     <div style={{backgroundColor: chooseColor?.danger}} className={`w-8 h-8 rounded-md`}></div>
                                 </div>
-                                <p className={'ml-2 text-sm leading-[29px] text-black dark:text-light font-[600] bg-opacity-20 text-base pr-3'}>{chooseColor?.danger}</p>
+                                <input
+                                    type={'text'}
+                                    defaultValue={chooseColor?.danger}
+                                    onChange={(e)=>setChooseColor({...chooseColor, danger: e.target.value})}
+                                    className={'bg-transparent w-full uppercase focus-visible:outlilne-0 ml-2 text-sm leading-[29px] text-black dark:text-light font-[600] bg-opacity-20 text-base pr-3'}
+                                />
                             </button>
                         </Tippy>
                         <div className={'grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>
