@@ -1,16 +1,13 @@
-import { useState, useEffect, useLayoutEffect } from "react";
+import { useState, useEffect } from "react";
 import CopyBox from "../components/common/shared/CopyBox";
-import { SketchPicker, SliderPicker,SwatchesPicker } from 'react-color';
+import { SketchPicker } from 'react-color';
 import Tippy from '@tippyjs/react';
 
 
 var tinycolor = require("tinycolor2");
 
 const Home = () => {
-    const [isCopied, setIsCopied] = useState({ copyValue: false, copyIndex: 5 });
     const [tinyColor, setTinyColor] = useState([]);
-
-
     const lightenValue =[40, 30, 20, 8, 0];
     const darkenValue = [8, 20, 25, 30];
 
@@ -31,9 +28,6 @@ const Home = () => {
         danger: '#B7371D',
     })
 
-    const handleCopyBtn = (index, value) => {
-        // setIsCopied({ copyValue: value, copyIndex: index });
-    }
 
     useEffect(()=>{
         const primaryData = lightenValue?.map((value, index)=>{return tinycolor(chooseColor?.primary).lighten(value).saturate(30).toString()});
@@ -94,7 +88,7 @@ const Home = () => {
                             {colorArr?.primary && colorArr?.primary?.map((color, index) => {
                                 return (
                                     <div key={index} className={'list relative w-full group cursor-pointer'}>
-                                            <CopyBox pickColor={color.toUpperCase()} copyBtn={(copyIndex, value) => console.log("test")} passIndex={index}/>
+                                            <CopyBox pickColor={color.toUpperCase()} />
                                     </div>
                                 )
                             })}
@@ -129,8 +123,7 @@ const Home = () => {
                         <div className={'grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>
                             {colorArr?.secondary?.map((color, index) => {
                                 return (<div key={index} className={'list relative w-full group cursor-pointer'}>
-                                        <CopyBox pickColor={color.toUpperCase()} copyBtn={(index, value) => handleCopyBtn(index, value)} passIndex={index}/>
-                                        {isCopied?.copyValue && isCopied?.copyIndex === index && <p className={'absolute inset-0 flex items-center justify-center bg-black text-white'} >Copied</p> }
+                                        <CopyBox pickColor={color.toUpperCase()} />
                                     </div>
                                 )
                             })}
@@ -167,8 +160,7 @@ const Home = () => {
                         <div className={'grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>
                             {colorArr?.success?.map((color, index) => {
                                 return ( <div key={index} className={'list relative w-full group cursor-pointer'}>
-                                        <CopyBox pickColor={color.toUpperCase()} copyBtn={(index, value) => handleCopyBtn(index, value)} passIndex={index}/>
-                                        {isCopied?.copyValue && isCopied?.copyIndex === index && <p className={'absolute inset-0 flex items-center justify-center bg-black text-white'} >Copied</p> }
+                                        <CopyBox pickColor={color.toUpperCase()} />
                                     </div>
                                 )
                             })}
@@ -203,8 +195,7 @@ const Home = () => {
                         <div className={'grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>
                             {colorArr?.info?.map((color, index) => {
                                 return ( <div key={index} className={'list relative w-full group cursor-pointer'}>
-                                        <CopyBox pickColor={color.toUpperCase()} copyBtn={(index, value) => handleCopyBtn(index, value)} passIndex={index}/>
-                                        {isCopied?.copyValue && isCopied?.copyIndex === index && <p className={'absolute inset-0 flex items-center justify-center bg-black text-white'} >Copied</p> }
+                                        <CopyBox pickColor={color.toUpperCase()} />
                                     </div>
                                 )
                             })}
@@ -239,8 +230,7 @@ const Home = () => {
                         <div className={'grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>
                             {colorArr?.warning?.map((color, index) => {
                                 return ( <div key={index} className={'list relative w-full group cursor-pointer'}>
-                                        <CopyBox pickColor={color.toUpperCase()} copyBtn={(index, value) => handleCopyBtn(index, value)} passIndex={index}/>
-                                        {isCopied?.copyValue && isCopied?.copyIndex === index && <p className={'absolute inset-0 flex items-center justify-center bg-black text-white'} >Copied</p> }
+                                        <CopyBox pickColor={color.toUpperCase()} />
                                     </div>
                                 )
                             })}
@@ -275,8 +265,7 @@ const Home = () => {
                         <div className={'grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>
                             {colorArr?.danger?.map((color, index) => {
                                 return ( <div key={index} className={'list relative w-full group cursor-pointer'}>
-                                        <CopyBox pickColor={color.toUpperCase()} copyBtn={(index, value) => handleCopyBtn(index, value)} passIndex={index}/>
-                                        {isCopied?.copyValue && isCopied?.copyIndex === index && <p className={'absolute inset-0 flex items-center justify-center bg-black text-white'} >Copied</p> }
+                                        <CopyBox pickColor={color.toUpperCase()} />
                                     </div>
                                 )
                             })}

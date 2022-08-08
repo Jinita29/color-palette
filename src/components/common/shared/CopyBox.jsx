@@ -4,7 +4,7 @@ import {CopyToClipboard} from "react-copy-to-clipboard/src";
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
-const CopyBox = ({copyBtn, pickColor, passIndex}) => {
+const CopyBox = ({copyBtn, pickColor}) => {
     const [visible, setVisible] = useState(false);
 
     const show = () => {
@@ -17,7 +17,7 @@ const CopyBox = ({copyBtn, pickColor, passIndex}) => {
 
     return (
         <>
-            <Tippy content="Copied" placement="top" visible={visible} >
+            <Tippy content="Copied" placement="top" theme={'light'} visible={visible} >
                 <div className={'w-full'}>
                     <CopyToClipboard
                         style={{backgroundColor: pickColor}}
