@@ -17,7 +17,7 @@ const CopyBox = ({copyBtn, pickColor}) => {
 
     return (
         <>
-            <Tippy content="Copied" placement="top" theme={'light'} visible={visible} >
+            <Tippy content="Copied" placement="top" theme={'light'} visible={visible} className={'copy-tooltip'} >
                 <div className={'w-full'}>
                     <CopyToClipboard
                         style={{backgroundColor: pickColor}}

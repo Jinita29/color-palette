@@ -52,7 +52,7 @@ const Home = () => {
             warning: warningData.concat(warningDarkData),
             danger: dangerData.concat(dangerDarkData),
         })
-    },[chooseColor])
+    },[chooseColor]);
 
     return (
         <>
@@ -86,11 +86,9 @@ const Home = () => {
                         </Tippy>
                         <div className={'grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>
                             {colorArr?.primary && colorArr?.primary?.map((color, index) => {
-                                return (
-                                    <div key={index} className={'list relative w-full group cursor-pointer'}>
+                                return <div key={index} className={'list relative w-full group cursor-pointer'}>
                                             <CopyBox pickColor={color.toUpperCase()} />
                                     </div>
-                                )
                             })}
                         </div>
                     </div>
@@ -122,10 +120,9 @@ const Home = () => {
                         </Tippy>
                         <div className={'grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>
                             {colorArr?.secondary?.map((color, index) => {
-                                return (<div key={index} className={'list relative w-full group cursor-pointer'}>
+                                return <div key={index} className={'list relative w-full group cursor-pointer'}>
                                         <CopyBox pickColor={color.toUpperCase()} />
                                     </div>
-                                )
                             })}
                         </div>
                     </div>
@@ -159,10 +156,9 @@ const Home = () => {
                         </Tippy>
                         <div className={'grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>
                             {colorArr?.success?.map((color, index) => {
-                                return ( <div key={index} className={'list relative w-full group cursor-pointer'}>
+                                return <div key={index} className={'list relative w-full group cursor-pointer'}>
                                         <CopyBox pickColor={color.toUpperCase()} />
                                     </div>
-                                )
                             })}
                         </div>
                     </div>
@@ -194,10 +190,9 @@ const Home = () => {
                         </Tippy>
                         <div className={'grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>
                             {colorArr?.info?.map((color, index) => {
-                                return ( <div key={index} className={'list relative w-full group cursor-pointer'}>
+                                return <div key={index} className={'list relative w-full group cursor-pointer'}>
                                         <CopyBox pickColor={color.toUpperCase()} />
-                                    </div>
-                                )
+                                </div>
                             })}
                         </div>
                     </div>
@@ -229,10 +224,9 @@ const Home = () => {
                         </Tippy>
                         <div className={'grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>
                             {colorArr?.warning?.map((color, index) => {
-                                return ( <div key={index} className={'list relative w-full group cursor-pointer'}>
+                                return <div key={index} className={'list relative w-full group cursor-pointer'}>
                                         <CopyBox pickColor={color.toUpperCase()} />
-                                    </div>
-                                )
+                                </div>
                             })}
                         </div>
                     </div>
@@ -264,10 +258,9 @@ const Home = () => {
                         </Tippy>
                         <div className={'grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>
                             {colorArr?.danger?.map((color, index) => {
-                                return ( <div key={index} className={'list relative w-full group cursor-pointer'}>
+                                return <div key={index} className={'list relative w-full group cursor-pointer'}>
                                         <CopyBox pickColor={color.toUpperCase()} />
-                                    </div>
-                                )
+                                </div>
                             })}
                         </div>
                     </div>

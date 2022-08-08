@@ -29,4 +29,10 @@
     input:focus-visible{
         @apply outline-0;
     }
+    .copy-tooltip{
+        background: #21be21;
+    }
+    .copy-tooltip .tippy-arrow{
+        color: #21be21;
+    }
 }
