@@ -2,14 +2,16 @@ import { useState, useEffect, useLayoutEffect } from "react";
 import CopyBox from "../components/common/shared/CopyBox";
 import { SketchPicker, SliderPicker,SwatchesPicker } from 'react-color';
 import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css';
+
 
 var tinycolor = require("tinycolor2");
 
 const Home = () => {
     const [isCopied, setIsCopied] = useState({ copyValue: false, copyIndex: 5 });
     const [tinyColor, setTinyColor] = useState([]);
-    const lightenValue =[30, 25, 20, 8, 0];
+
+
+    const lightenValue =[40, 30, 20, 8, 0];
     const darkenValue = [8, 20, 25, 30];
 
     const [colorArr, setColorArr] = useState({
@@ -34,19 +36,19 @@ const Home = () => {
     }
 
     useEffect(()=>{
-        const primaryData = lightenValue?.map((value, index)=>{return tinycolor(chooseColor?.primary).lighten(value).toString()});
-        const secondaryData = lightenValue?.map((value, index)=>{return tinycolor(chooseColor?.secondary).lighten(value).brighten(value).toString()});
-        const successData = lightenValue?.map((value, index)=>{return tinycolor(chooseColor?.success).lighten(value).brighten(value).toString()});
-        const infoData = lightenValue?.map((value, index)=>{return tinycolor(chooseColor?.info).lighten(value).brighten(value).toString()});
-        const warningData = lightenValue?.map((value, index)=>{return tinycolor(chooseColor?.warning).lighten(value).brighten(value).toString()});
-        const dangerData = lightenValue?.map((value, index)=>{return tinycolor(chooseColor?.danger).lighten(value).brighten(value).toString()});
+        const primaryData = lightenValue?.map((value, index)=>{return tinycolor(chooseColor?.primary).lighten(value).saturate(30).toString()});
+        const secondaryData = lightenValue?.map((value, index)=>{return tinycolor(chooseColor?.secondary).lighten(value).saturate(30).toString()});
+        const successData = lightenValue?.map((value, index)=>{return tinycolor(chooseColor?.success).lighten(value).saturate(30).toString()});
+        const infoData = lightenValue?.map((value, index)=>{return tinycolor(chooseColor?.info).lighten(value).saturate(30).toString()});
+        const warningData = lightenValue?.map((value, index)=>{return tinycolor(chooseColor?.warning).lighten(value).saturate(30).toString()});
+        const dangerData = lightenValue?.map((value, index)=>{return tinycolor(chooseColor?.danger).lighten(value).saturate(30).toString()});
 
-        const primaryDarkData = darkenValue?.map((value, index)=>{return tinycolor(chooseColor?.primary).darken(value).toString()});
-        const secondaryDarkData = darkenValue?.map((value, index)=>{return tinycolor(chooseColor?.secondary).darken(value).toString()});
-        const successDarkData = darkenValue?.map((value, index)=>{return tinycolor(chooseColor?.success).darken(value).toString()});
-        const infoDarkData = darkenValue?.map((value, index)=>{return tinycolor(chooseColor?.info).darken(value).toString()});
-        const warningDarkData = darkenValue?.map((value, index)=>{return tinycolor(chooseColor?.warning).darken(value).toString()});
-        const dangerDarkData = darkenValue?.map((value, index)=>{return tinycolor(chooseColor?.danger).darken(value).toString()});
+        const primaryDarkData = darkenValue?.map((value, index)=>{return tinycolor(chooseColor?.primary).darken(value).saturate(30).toString()});
+        const secondaryDarkData = darkenValue?.map((value, index)=>{return tinycolor(chooseColor?.secondary).darken(value).saturate(30).toString()});
+        const successDarkData = darkenValue?.map((value, index)=>{return tinycolor(chooseColor?.success).darken(value).saturate(30).toString()});
+        const infoDarkData = darkenValue?.map((value, index)=>{return tinycolor(chooseColor?.info).darken(value).saturate(30).toString()});
+        const warningDarkData = darkenValue?.map((value, index)=>{return tinycolor(chooseColor?.warning).darken(value).saturate(30).toString()});
+        const dangerDarkData = darkenValue?.map((value, index)=>{return tinycolor(chooseColor?.danger).darken(value).saturate(30).toString()});
 
         setColorArr({
             primary: primaryData.concat(primaryDarkData),
@@ -90,10 +92,11 @@ const Home = () => {
                         </Tippy>
                         <div className={'grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>
                             {colorArr?.primary && colorArr?.primary?.map((color, index) => {
-                                return (<div key={index} className={'list relative w-full group cursor-pointer'}>
-                                    <CopyBox pickColor={color} copyBtn={(index, value) => handleCopyBtn(index, value)} passIndex={index}/>
-                                    {isCopied?.copyValue && isCopied?.copyIndex === index && <p className={'absolute inset-0 flex items-center justify-center bg-black text-white'} >Copied</p> }
-                                </div>)
+                                return (
+                                    <div key={index} className={'list relative w-full group cursor-pointer'}>
+                                            <CopyBox pickColor={color.toUpperCase()} copyBtn={(copyIndex, value) => console.log("test")} passIndex={index}/>
+                                    </div>
+                                )
                             })}
                         </div>
                     </div>
@@ -126,7 +129,7 @@ const Home = () => {
                         <div className={'grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>
                             {colorArr?.secondary?.map((color, index) => {
                                 return (<div key={index} className={'list relative w-full group cursor-pointer'}>
-                                        <CopyBox pickColor={color} copyBtn={(index, value) => handleCopyBtn(index, value)} passIndex={index}/>
+                                        <CopyBox pickColor={color.toUpperCase()} copyBtn={(index, value) => handleCopyBtn(index, value)} passIndex={index}/>
                                         {isCopied?.copyValue && isCopied?.copyIndex === index && <p className={'absolute inset-0 flex items-center justify-center bg-black text-white'} >Copied</p> }
                                     </div>
                                 )
@@ -164,7 +167,7 @@ const Home = () => {
                         <div className={'grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>
                             {colorArr?.success?.map((color, index) => {
                                 return ( <div key={index} className={'list relative w-full group cursor-pointer'}>
-                                        <CopyBox pickColor={color} copyBtn={(index, value) => handleCopyBtn(index, value)} passIndex={index}/>
+                                        <CopyBox pickColor={color.toUpperCase()} copyBtn={(index, value) => handleCopyBtn(index, value)} passIndex={index}/>
                                         {isCopied?.copyValue && isCopied?.copyIndex === index && <p className={'absolute inset-0 flex items-center justify-center bg-black text-white'} >Copied</p> }
                                     </div>
                                 )
@@ -200,7 +203,7 @@ const Home = () => {
                         <div className={'grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>
                             {colorArr?.info?.map((color, index) => {
                                 return ( <div key={index} className={'list relative w-full group cursor-pointer'}>
-                                        <CopyBox pickColor={color} copyBtn={(index, value) => handleCopyBtn(index, value)} passIndex={index}/>
+                                        <CopyBox pickColor={color.toUpperCase()} copyBtn={(index, value) => handleCopyBtn(index, value)} passIndex={index}/>
                                         {isCopied?.copyValue && isCopied?.copyIndex === index && <p className={'absolute inset-0 flex items-center justify-center bg-black text-white'} >Copied</p> }
                                     </div>
                                 )
@@ -236,7 +239,7 @@ const Home = () => {
                         <div className={'grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>
                             {colorArr?.warning?.map((color, index) => {
                                 return ( <div key={index} className={'list relative w-full group cursor-pointer'}>
-                                        <CopyBox pickColor={color} copyBtn={(index, value) => handleCopyBtn(index, value)} passIndex={index}/>
+                                        <CopyBox pickColor={color.toUpperCase()} copyBtn={(index, value) => handleCopyBtn(index, value)} passIndex={index}/>
                                         {isCopied?.copyValue && isCopied?.copyIndex === index && <p className={'absolute inset-0 flex items-center justify-center bg-black text-white'} >Copied</p> }
                                     </div>
                                 )
@@ -272,7 +275,7 @@ const Home = () => {
                         <div className={'grid grid-cols-1 gap-x-3 color-lists rounded-md overflow-hidden'}>
                             {colorArr?.danger?.map((color, index) => {
                                 return ( <div key={index} className={'list relative w-full group cursor-pointer'}>
-                                        <CopyBox pickColor={color} copyBtn={(index, value) => handleCopyBtn(index, value)} passIndex={index}/>
+                                        <CopyBox pickColor={color.toUpperCase()} copyBtn={(index, value) => handleCopyBtn(index, value)} passIndex={index}/>
                                         {isCopied?.copyValue && isCopied?.copyIndex === index && <p className={'absolute inset-0 flex items-center justify-center bg-black text-white'} >Copied</p> }
                                     </div>
                                 )
