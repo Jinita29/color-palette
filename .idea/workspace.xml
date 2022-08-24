@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c6346a40-a088-4aff-840c-f4cd803ce4e9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/shared/CopyBox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/shared/CopyBox.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +76,8 @@
       <workItem from="1659856590221" duration="6455000" />
       <workItem from="1659872115135" duration="577000" />
       <workItem from="1659879535352" duration="11353000" />
-      <workItem from="1659975691416" duration="11946000" />
+      <workItem from="1659975691416" duration="12203000" />
+      <workItem from="1660622883758" duration="2645000" />
     </task>
     <task id="LOCAL-00001" summary="Update tiny color">
       <created>1659553979986</created>
